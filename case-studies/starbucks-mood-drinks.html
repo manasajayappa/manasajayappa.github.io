@@ -10,9 +10,10 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --forest:#0E1A16; --surface:#162620; --panel:#1D3329; --border:#2A4A3A;
-    --amber:#E8A94A; --amber-soft:#F0C87A; --green-glow:#3DC98C;
-    --text:#EEF5F1; --muted:#7BAF95; --subtle:#3D6050;
+    /* Starbucks brand green, dark — this page carries the subject's brand */
+    --forest:#00291F; --surface:#00382B; --panel:#004734; --border:#0A6B4C;
+    --amber:#E8A94A; --amber-soft:#F0C87A; --green-glow:#5FE3AE;
+    --text:#F1FBF6; --muted:#9BD4BB; --subtle:#4E9C7C;
   }
   html { scroll-behavior:smooth; }
   body { background:var(--forest); color:var(--text); font-family:'Inter',sans-serif; font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased; }
@@ -22,7 +23,7 @@
   .nav-links a { text-decoration:none; color:var(--muted); font-size:.85rem; font-weight:500; transition:color .2s; }
   .nav-links a:hover { color:var(--text); }
   .hero { min-height:100vh; display:flex; flex-direction:column; justify-content:flex-end; padding:0 80px 80px; position:relative; overflow:hidden; }
-  .hero-bg { position:absolute; inset:0; background:radial-gradient(ellipse 70% 60% at 65% 40%,#1E4D35 0%,transparent 65%), radial-gradient(ellipse 50% 50% at 20% 70%,#2A3D1A 0%,transparent 60%); }
+  .hero-bg { position:absolute; inset:0; background:radial-gradient(ellipse 70% 60% at 65% 40%,#00704A 0%,transparent 68%), radial-gradient(ellipse 55% 55% at 18% 72%,#00593B 0%,transparent 62%); }
   .hero-tag { font-size:.8rem; font-weight:500; letter-spacing:.08em; color:var(--amber); margin-bottom:20px; position:relative; }
   .hero-tag::before { content:''; display:inline-block; width:28px; height:1px; background:var(--amber); vertical-align:middle; margin-right:10px; }
   .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2.8rem,6vw,5.2rem); font-weight:700; line-height:1.08; max-width:780px; position:relative; }
@@ -147,6 +148,22 @@
     .cs-next { padding:0 24px 72px; }
     .cs-next-card { padding:26px 22px; }
   }
+  .nav-links a.current { color:var(--amber) !important; position:relative; }
+  .nav-links a.current::after { content:''; position:absolute; left:0; right:0; bottom:-22px; height:2px; background:var(--amber); }
+  .nav-cta { border:1px solid var(--border); border-radius:6px; padding:7px 16px; color:var(--amber) !important; transition:all .2s; }
+  .nav-cta:hover { background:var(--panel); border-color:var(--amber); }
+  .cs-jump { border-bottom:1px solid var(--border); background:var(--surface); }
+  .cs-jump-inner { max-width:920px; margin:0 auto; padding:16px 40px; display:flex; gap:26px; align-items:center; flex-wrap:wrap; }
+  .cs-jump-label { font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--subtle); font-weight:600; }
+  .cs-jump a { font-size:.85rem; color:var(--muted); text-decoration:none; transition:color .2s; }
+  .cs-jump a:hover { color:var(--amber); }
+  @media(max-width:768px) {
+    .nav-links a.current::after { display:none; }
+    .cs-jump-inner { padding:14px 22px; gap:16px; }
+    .mood-tabs { -webkit-overflow-scrolling:touch; }
+  }
+  .table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:32px; }
+  .table-scroll .spec-table { margin-top:0; min-width:520px; }
 </style>
 </head>
 <body>
@@ -154,17 +171,15 @@
 <nav>
   <a class="nav-name" href="../index.html">Manasa J<span class="nav-name-sub">Product Manager</span></a>
   <ul class="nav-links">
-    <li><a href="#problem">Problem</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#feature">Feature</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#metrics">Metrics</a></li>
-    <li><a href="../index.html#work" class="nav-back">&larr; All work</a></li>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../experience.html">Experience</a></li>
+    <li><a href="#top" class="current">Starbucks Case Study</a></li>
+    <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
   </ul>
-  <a href="../index.html#work" class="nav-back-mobile">&larr; Portfolio</a>
+  <a href="../index.html" class="nav-back-mobile">&larr; Portfolio</a>
 </nav>
 
-<div class="hero">
+<div class="hero" id="top">
   <div class="hero-bg"></div>
   <div class="hero-content" id="heroContent">
     <p class="hero-tag">Product Case Study &nbsp;·&nbsp; Starbucks Mobile App</p>
@@ -180,7 +195,16 @@
   <div class="scroll-hint">scroll</div>
 </div>
 
-<hr class="divider">
+<div class="cs-jump">
+  <div class="cs-jump-inner">
+    <span class="cs-jump-label">Jump to</span>
+    <a href="#problem">Problem</a>
+    <a href="#research">Research</a>
+    <a href="#feature">Feature</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#metrics">Metrics</a>
+  </div>
+</div>
 
 <section id="problem">
   <div class="section-marker">The Problem</div>
@@ -397,6 +421,7 @@
     <div class="section-marker">Product Requirements</div>
     <h2>Feature scope and prioritization</h2>
     <p>I used a RICE-influenced scoring model (Reach × Impact / Confidence × Effort) to define a phased scope. Below are the top requirements from the PRD, segmented by launch phase.</p>
+    <div class="table-scroll">
     <table class="spec-table">
       <thead><tr><th>Feature</th><th>Description</th><th>Priority</th><th>Phase</th></tr></thead>
       <tbody>
@@ -410,6 +435,7 @@
         <tr><td><strong style="color:var(--text);">Social sharing card</strong></td><td>Share a styled card of your mood + drink pick to Instagram Stories</td><td><span class="badge badge-p3">P3</span></td><td>v2.0</td></tr>
       </tbody>
     </table>
+    </div>
   </div>
 </section>
 

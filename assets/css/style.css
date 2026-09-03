@@ -238,3 +238,54 @@ strong { color:var(--text); font-weight:600; }
   .site-footer { padding:36px 24px; flex-direction:column; align-items:flex-start; }
   .timeline::before { left:6px; }
 }
+
+/* =========================================================
+   Multi-page shell — tabs, sub-page headers, cross-page CTA
+   ========================================================= */
+
+/* Current tab */
+.nav-links a.current { color:var(--accent); position:relative; }
+.nav-links a.current::after {
+  content:''; position:absolute; left:0; right:0; bottom:-22px;
+  height:2px; background:var(--accent);
+}
+.nav-links a.current.nav-cta::after { display:none; }
+
+/* Inline text link */
+.inline-link { color:var(--accent); text-decoration:none; font-weight:500; border-bottom:1px solid transparent; transition:border-color .2s; }
+.inline-link:hover { border-bottom-color:var(--accent); }
+
+/* Sub-page header */
+.page-head {
+  position:relative; overflow:hidden;
+  padding:158px 80px 70px;
+  border-bottom:1px solid var(--border);
+}
+.page-head-bg {
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 55% 80% at 80% 18%, rgba(180,83,31,.09) 0%, transparent 62%),
+    radial-gradient(ellipse 50% 70% at 8% 92%, rgba(198,168,120,.15) 0%, transparent 60%),
+    linear-gradient(180deg, #FFFDF9 0%, var(--paper) 100%);
+}
+.page-head-inner { position:relative; max-width:var(--maxw); margin:0 auto; }
+.page-head h1 {
+  font-size:clamp(2.2rem,4.6vw,3.4rem); font-weight:700; line-height:1.08;
+  margin-top:6px; letter-spacing:-.02em; max-width:18ch;
+}
+.page-head h1 em { font-style:italic; color:var(--accent); }
+.page-head .lede { margin-top:20px; font-size:1.05rem; color:var(--muted); max-width:60ch; }
+
+/* Cross-page CTA card */
+.cs-next-card {
+  display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;
+  background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:32px 34px;
+}
+.cs-next-card h3 { margin-bottom:6px; }
+.cs-next-card p { font-size:.88rem; margin:0; }
+
+@media (max-width:768px) {
+  .nav-links a.current::after { display:none; }
+  .page-head { padding:104px 24px 50px; }
+  .cs-next-card { padding:26px 22px; }
+}
