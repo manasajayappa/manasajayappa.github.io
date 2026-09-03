@@ -1,5 +1,7 @@
 # Manasa J — Product Manager Portfolio
 
+**Live at <https://manasajayappa.github.io>**
+
 A static portfolio site (HTML / CSS / vanilla JS, no build step) for product management job search.
 
 ## Structure

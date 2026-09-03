@@ -1,20 +1,21 @@
-# Deploying this portfolio to GitHub Pages
+# Deploying this portfolio
 
-Everything below is run from **Terminal on your Mac**, from this folder:
+**The site is live at <https://manasajayappa.github.io>**
+
+Repo: `manasajayappa/manasajayappa.github.io` · Branch: `main` · Folder: `/ (root)`
+
+Working folder on this Mac:
 
 ```bash
-cd ~/Desktop/Portfolio/Git
+cd ~/Desktop/Portfolio/manasajayappa.github.io
 ```
+
+The initial setup (account, repo, push, Pages) is done. Steps 1-5 below are kept
+for reference only. Day-to-day, you only need "Making changes later".
 
 ---
 
-## Step 0 — One-time housekeeping
-
-**Delete the leftover folder** (it holds git lock files a previous session couldn't remove; it is already gitignored):
-
-```bash
-rm -rf _git_stale_locks
-```
+## Step 0 — One-time housekeeping (done)
 
 **Tell git who you are** (only needed once per machine):
 
@@ -27,7 +28,7 @@ Use the same email as your GitHub account so your commits are attributed to you.
 
 ---
 
-## Step 1 — Create a GitHub account
+## Step 1 — Create a GitHub account (done)
 
 If you don't have one: <https://github.com/signup>
 
@@ -35,7 +36,7 @@ Your username becomes part of your site's address, so pick something you'd put o
 
 ---
 
-## Step 2 — Choose your repository name (this decides your URL)
+## Step 2 — Choose your repository name (this decides your URL) (done)
 
 | Repo name | Your site URL | Notes |
 |---|---|---|
@@ -46,7 +47,7 @@ If your username were `manasaj`, the recommended repo name is exactly `manasaj.g
 
 ---
 
-## Step 3 — Create the empty repository on GitHub
+## Step 3 — Create the empty repository on GitHub (done)
 
 1. Go to <https://github.com/new>
 2. **Repository name:** the name you chose in Step 2
@@ -60,7 +61,7 @@ Leave that page open — it shows the URL you need next.
 
 ---
 
-## Step 4 — Connect your folder and push
+## Step 4 — Connect your folder and push (done)
 
 Replace `<username>` and `<repo>` with your real values:
 
@@ -96,7 +97,7 @@ macOS stores it in Keychain, so you'll only do this once.
 
 ---
 
-## Step 5 — Turn on GitHub Pages
+## Step 5 — Turn on GitHub Pages (done)
 
 1. On your repo page, click **Settings** (top right)
 2. Left sidebar → **Pages** (under "Code and automation")
@@ -108,7 +109,7 @@ Wait about a minute. Refresh the page — a green banner appears with your live 
 
 ---
 
-## Step 6 — Check your live site
+## Step 6 — Check your live site (done)
 
 Visit your URL and click through all three tabs: Home, Experience, Starbucks Case Study.
 
@@ -145,7 +146,7 @@ DNS changes can take a few hours to take effect.
 Every push updates the live site automatically, usually within a minute.
 
 ```bash
-cd ~/Desktop/Portfolio/Git
+cd ~/Desktop/Portfolio/manasajayappa.github.io
 git add .
 git commit -m "Describe what changed"
 git push
