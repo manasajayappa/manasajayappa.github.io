@@ -6,7 +6,8 @@ A static portfolio site (HTML / CSS / vanilla JS, no build step) for product man
 
 ```
 .
-├── index.html                              # Homepage: hero, about, case studies, experience, skills, contact
+├── index.html                              # Homepage: hero, about, contact
+├── experience.html                         # Roles, skills, certifications, education
 ├── case-studies/
 │   └── starbucks-mood-drinks.html          # "Sip Your Vibe" — Starbucks mood-based drink recommendations
 ├── assets/
@@ -26,24 +27,19 @@ python3 -m http.server 8000
 
 ## Deploy to GitHub Pages
 
-1. Create a new repository on GitHub. For a URL like `https://<username>.github.io/`,
-   name it `<username>.github.io`. For `https://<username>.github.io/portfolio/`,
-   name it `portfolio`.
+Full step-by-step instructions — account, push, authentication, Pages setup and
+custom domains — are in **[DEPLOY.md](DEPLOY.md)**.
 
-2. From this folder:
+Short version, once the remote is set up:
 
-   ```bash
-   git add .
-   git commit -m "Portfolio site"
-   git branch -M main
-   git remote add origin https://github.com/<username>/<repo>.git
-   git push -u origin main
-   ```
+```bash
+git add .
+git commit -m "Describe what changed"
+git push
+```
 
-3. On GitHub: **Settings → Pages → Build and deployment**
-   - Source: *Deploy from a branch*
-   - Branch: `main`, folder: `/ (root)`
-   - Save. The site is live in about a minute.
+Every push updates the live site within about a minute.
+
 
 ## Before you publish — fill these in
 
