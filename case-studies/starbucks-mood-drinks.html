@@ -181,6 +181,117 @@
   .cs-sum-fact span { display:block; font-size:.68rem; letter-spacing:.09em; text-transform:uppercase; color:var(--subtle); font-weight:600; margin-bottom:5px; }
   @media(max-width:768px) { .cs-summary-inner { padding:56px 24px; } }
   section[id], .cs-summary[id] { scroll-margin-top:88px; }
+/* =========================================================
+   TILE TREATMENT — Griting-style cards
+   Geometry: 24px radius, 1px hairline, 24px padding, 16px gap
+   ========================================================= */
+  :root { --tile:#FBFAF7; --tile-2:#F3F1EB; --tile-line:#E4EDE7; --ink:#06251C;
+          --ink-soft:#4A6357; --ink-faint:#7C8F85; --sb:#00704A; --amber-ink:#9A6A1B; }
+
+  /* ---- 1. At a glance ---- */
+  .cs-summary-grid { gap:16px; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); }
+  .cs-sum-cell { border-radius:24px; padding:24px; }
+  .cs-sum-label { font-size:.7rem; letter-spacing:.09em; margin-bottom:12px; }
+  .cs-sum-cell p { font-size:.9375rem; line-height:1.75; }
+
+  /* ---- 2. Stat tiles — separate cards, not one gridded slab ---- */
+  .insight-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(178px,1fr));
+    gap:16px; background:none; border:none; border-radius:0; overflow:visible; margin-top:40px; }
+  .insight-cell { border-radius:24px; padding:24px; box-shadow:none; }
+  .insight-stat { font-family:'Inter',sans-serif; font-size:2.25rem; font-weight:500;
+    letter-spacing:-.02em; line-height:1.1; margin-bottom:12px; }
+  .insight-cell p { font-size:.9375rem; line-height:1.7; }
+
+  /* ---- 3. Personas ---- */
+  .persona-strip { gap:16px; margin-top:40px; }
+  .persona { border-radius:24px; padding:24px; min-width:230px; }
+  .persona::before { top:14px; right:18px; font-size:1.75rem; opacity:.5; }
+  .persona-role { font-size:.7rem; letter-spacing:.09em; text-transform:uppercase; margin-bottom:12px; }
+  .persona h3 { font-family:'Inter',sans-serif; font-size:1.375rem; font-weight:500;
+    letter-spacing:-.015em; line-height:1.2; margin-bottom:10px; }
+  .persona p { font-size:.9375rem; line-height:1.7; }
+  .persona-pain { margin-top:14px; font-size:.875rem; line-height:1.6; }
+
+  /* ---- 4. Feature demo ---- */
+  .matrix-wrap { border-radius:28px; margin-top:40px; }
+  .matrix-header { padding:26px 28px; }
+  .matrix-header h3 { font-size:1.375rem; font-weight:500; letter-spacing:-.015em; }
+  .mood-tab { padding:15px 22px; }
+  .drink-rec { border-radius:20px; padding:22px; }
+  .drink-name { font-family:'Inter',sans-serif; font-size:1.125rem; font-weight:500; letter-spacing:-.01em; }
+  .drink-why { font-size:.9375rem; line-height:1.7; }
+  .drink-alt { border-radius:16px; padding:14px 16px; }
+  .tag { border-radius:999px; padding:5px 12px; }
+
+  /* ---- 5. Metrics ---- */
+  .metrics-grid { gap:16px; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); }
+  .metric-card { border-radius:24px; padding:24px; }
+  .metric-category { font-size:.7rem; letter-spacing:.09em; text-transform:uppercase; margin-bottom:16px; }
+  .metric-item { margin-bottom:16px; }
+  .metric-name { font-size:.9375rem; margin-bottom:4px; }
+  .metric-target { font-size:.875rem; }
+  .metric-baseline { font-size:.8125rem; }
+
+  /* ---- Cream surfaces ---- */
+  .cs-sum-cell, .insight-cell, .persona, .metric-card, .matrix-wrap {
+    background:var(--tile); border:1px solid var(--tile-line); }
+  .cs-sum-label, .persona-role, .metric-category { color:var(--sb); font-weight:700; }
+  .cs-sum-cell p, .insight-cell p, .persona p, .metric-baseline { color:var(--ink-soft); }
+  .insight-stat { color:var(--sb); }
+  .persona h3, .metric-name { color:var(--ink); }
+  .persona-pain, .metric-target { color:var(--amber-ink); }
+
+  .matrix-header { border-bottom:1px solid var(--tile-line); }
+  .matrix-header h3 { color:var(--ink); }
+  .matrix-header span { color:var(--ink-faint); }
+  .mood-tabs { border-bottom:1px solid var(--tile-line); }
+  .mood-tab { color:var(--ink-soft); }
+  .mood-tab.active { color:var(--sb); border-bottom-color:var(--sb); }
+  .mood-tab:hover:not(.active) { color:var(--ink); }
+  .mood-desc { color:var(--ink-soft); }
+  .mood-panel h3 { color:var(--ink) !important; }
+  .drink-rec { background:var(--tile-2); border:1px solid var(--tile-line); }
+  .drink-type { color:var(--sb); }
+  .drink-name { color:var(--ink); }
+  .drink-why { color:var(--ink-soft); }
+  .tag { background:#FFFFFF; border:1px solid var(--tile-line); color:var(--ink-soft); }
+  .drink-alt { background:var(--tile-2); border:1px solid var(--tile-line); }
+  .drink-alt-name { color:var(--ink); }
+  .drink-alt-sub { color:var(--ink-faint); }
+  .alt-label, .mood-panel p[style] { color:var(--ink-soft) !important; }
+
+  /* ---- Hover ---- */
+  .cs-sum-cell, .insight-cell, .persona, .metric-card {
+    transition: transform .26s cubic-bezier(.22,.61,.36,1),
+                box-shadow .26s cubic-bezier(.22,.61,.36,1),
+                border-color .26s ease, background-color .26s ease;
+    will-change: transform;
+  }
+  .cs-sum-cell:hover, .insight-cell:hover, .persona:hover, .metric-card:hover {
+    transform: translateY(-6px);
+    background:#FFFFFF;
+    border-color:rgba(0,112,74,.38);
+    box-shadow: 0 18px 38px rgba(0,20,14,.32), 0 2px 6px rgba(0,20,14,.18);
+  }
+  .persona::before { transition: transform .26s cubic-bezier(.22,.61,.36,1), opacity .26s ease; }
+  .persona:hover::before { transform: scale(1.18) rotate(-6deg); opacity:.85; }
+  .insight-stat { transition: color .26s ease; }
+  .insight-cell:hover .insight-stat { color:#005538; }
+
+  /* the demo tile holds controls — lift it and the tabs jitter under the cursor */
+  .matrix-wrap { transition: box-shadow .3s ease, border-color .3s ease; }
+  .matrix-wrap:hover { border-color:rgba(0,112,74,.30);
+    box-shadow: 0 20px 44px rgba(0,20,14,.28); }
+
+  @media (hover: none) {
+    .cs-sum-cell:hover, .insight-cell:hover, .persona:hover, .metric-card:hover {
+      transform:none; box-shadow:none; background:var(--tile); border-color:var(--tile-line); }
+    .matrix-wrap:hover { box-shadow:none; border-color:var(--tile-line); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cs-sum-cell, .insight-cell, .persona, .metric-card, .matrix-wrap, .persona::before { transition:none; }
+    .cs-sum-cell:hover, .insight-cell:hover, .persona:hover, .metric-card:hover { transform:none; }
+  }
 </style>
 </head>
 <body>
