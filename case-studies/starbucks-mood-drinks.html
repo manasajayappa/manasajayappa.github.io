@@ -69,6 +69,8 @@
   .mood-panel { display:none; padding:32px 28px; }
   .mood-panel.active { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
   .mood-emoji { font-size:3rem; margin-bottom:16px; }
+  .mood-art { height:136px; width:auto; display:block; margin:0 0 18px; }
+  @media(max-width:768px){ .mood-art { height:112px; } }
   .mood-desc { font-size:.92rem; color:var(--muted); margin-bottom:20px; }
   .drink-rec { background:var(--panel); border-radius:8px; padding:20px; border:1px solid var(--border); }
   .drink-name { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:600; color:var(--text); margin-bottom:6px; }
@@ -458,7 +460,7 @@
 
     <div class="mood-panel active" id="mood-energize">
       <div>
-        <div class="mood-emoji">⚡</div>
+        <svg class="mood-art" viewBox="0 0 100 140" role="img" aria-label="Illustration of an iced shaken espresso with oat milk"><defs><clipPath id="ce"><path d="M25,40 L33,122 Q34,129 41,129 L59,129 Q66,129 67,122 L75,40 Z"/></clipPath></defs><path d="M60,12 L66,33" stroke="#2E7D5B" stroke-width="7" stroke-linecap="round"/><g clip-path="url(#ce)"><rect x="0" y="86" width="100" height="60" fill="#E3CFAE"/><rect x="0" y="40" width="100" height="46" fill="#6B4527"/><rect x="0" y="82" width="100" height="8" fill="#9A6B40" opacity=".75"/><g fill="#FFFFFF" fill-opacity=".42" stroke="#FFFFFF" stroke-opacity=".7" stroke-width="1"><rect x="31" y="52" width="16" height="15" rx="3" transform="rotate(-14 39 59)"/><rect x="52" y="62" width="15" height="14" rx="3" transform="rotate(11 59 69)"/><rect x="36" y="80" width="15" height="14" rx="3" transform="rotate(20 43 87)"/><rect x="54" y="95" width="13" height="12" rx="3" transform="rotate(-9 60 101)"/></g></g><path d="M25,40 L33,122 Q34,129 41,129 L59,129 Q66,129 67,122 L75,40 Z" fill="none" stroke="#06251C" stroke-opacity=".8" stroke-width="2.6" stroke-linejoin="round"/><rect x="21" y="30" width="58" height="11" rx="5" fill="#EFEAE0" stroke="#06251C" stroke-opacity=".8" stroke-width="2.4"/></svg>
         <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:10px;">Energize</h3>
         <p class="mood-desc">You need fuel. Fast. Whether it's the start of a long day or a mid-afternoon slump, this is about clean, reliable energy with enough flavor to make it feel like a treat.</p>
         <div class="drink-rec">
@@ -480,7 +482,7 @@
 
     <div class="mood-panel" id="mood-calm">
       <div>
-        <div class="mood-emoji">🌿</div>
+        <svg class="mood-art" viewBox="0 0 100 140" role="img" aria-label="Illustration of a hot honey citrus mint tea"><defs><clipPath id="cc"><path d="M27,46 L35,124 Q36,131 43,131 L57,131 Q64,131 65,124 L73,46 Z"/></clipPath></defs><g fill="none" stroke="#06251C" stroke-opacity=".28" stroke-width="2.4" stroke-linecap="round"><path d="M42,30 q4,-7 0,-13 q-4,-6 0,-11"/><path d="M52,27 q4,-7 0,-13 q-4,-6 0,-10"/><path d="M62,31 q4,-7 0,-12"/></g><g clip-path="url(#cc)"><rect x="0" y="46" width="100" height="100" fill="#E8B451"/><rect x="0" y="46" width="100" height="9" fill="#F3D08C" opacity=".8"/><g opacity=".5"><path d="M44,104 q7,-8 14,-2 q-7,8 -14,2" fill="#2F7A4E"/><path d="M38,88 q6,-7 12,-2 q-6,7 -12,2" fill="#3C8F5C"/></g></g><path d="M27,46 L35,124 Q36,131 43,131 L57,131 Q64,131 65,124 L73,46 Z" fill="none" stroke="#06251C" stroke-opacity=".8" stroke-width="2.6" stroke-linejoin="round"/><path d="M30.3,73 L69.7,73 L67.6,99 L32.4,99 Z" fill="#C9A227" fill-opacity=".22" stroke="#06251C" stroke-opacity=".55" stroke-width="2"/><rect x="23" y="34" width="54" height="13" rx="6" fill="#E4DCCD" stroke="#06251C" stroke-opacity=".8" stroke-width="2.4"/></svg>
         <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:10px;">Calm Down</h3>
         <p class="mood-desc">You want warmth without the buzz. Something that signals the workday is winding down, or helps you decompress without needing to leave.</p>
         <div class="drink-rec">
@@ -502,7 +504,7 @@
 
     <div class="mood-panel" id="mood-focus">
       <div>
-        <div class="mood-emoji">🧠</div>
+        <svg class="mood-art" viewBox="0 0 100 140" role="img" aria-label="Illustration of an iced matcha latte"><defs><clipPath id="cf"><path d="M25,40 L33,122 Q34,129 41,129 L59,129 Q66,129 67,122 L75,40 Z"/></clipPath></defs><path d="M60,12 L66,33" stroke="#3F7C4E" stroke-width="7" stroke-linecap="round"/><g clip-path="url(#cf)"><rect x="0" y="78" width="100" height="70" fill="#F2EADA"/><rect x="0" y="40" width="100" height="38" fill="#86AE55"/><rect x="0" y="74" width="100" height="9" fill="#B6CB8C" opacity=".85"/><g fill="#FFFFFF" fill-opacity=".38" stroke="#FFFFFF" stroke-opacity=".7" stroke-width="1"><rect x="31" y="52" width="16" height="15" rx="3" transform="rotate(-14 39 59)"/><rect x="52" y="62" width="15" height="14" rx="3" transform="rotate(11 59 69)"/><rect x="36" y="80" width="15" height="14" rx="3" transform="rotate(20 43 87)"/><rect x="54" y="95" width="13" height="12" rx="3" transform="rotate(-9 60 101)"/></g></g><path d="M25,40 L33,122 Q34,129 41,129 L59,129 Q66,129 67,122 L75,40 Z" fill="none" stroke="#06251C" stroke-opacity=".8" stroke-width="2.6" stroke-linejoin="round"/><rect x="21" y="30" width="58" height="11" rx="5" fill="#EFEAE0" stroke="#06251C" stroke-opacity=".8" stroke-width="2.4"/></svg>
         <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:10px;">Deep Focus</h3>
         <p class="mood-desc">You're settling in for a long work session. You need something that sustains without distracting — moderate caffeine, easy to sip slowly, not too sweet.</p>
         <div class="drink-rec">
@@ -524,7 +526,7 @@
 
     <div class="mood-panel" id="mood-cozy">
       <div>
-        <div class="mood-emoji">☕</div>
+        <svg class="mood-art" viewBox="0 0 100 140" role="img" aria-label="Illustration of a hot caramel latte with whipped cream"><defs><clipPath id="cz"><path d="M27,46 L35,124 Q36,131 43,131 L57,131 Q64,131 65,124 L73,46 Z"/></clipPath></defs><g fill="none" stroke="#06251C" stroke-opacity=".28" stroke-width="2.4" stroke-linecap="round"><path d="M42,30 q4,-7 0,-13 q-4,-6 0,-11"/><path d="M52,27 q4,-7 0,-13 q-4,-6 0,-10"/><path d="M62,31 q4,-7 0,-12"/></g><g clip-path="url(#cz)"><rect x="0" y="46" width="100" height="100" fill="#B07A45"/><rect x="0" y="46" width="100" height="12" fill="#CE9A63" opacity=".9"/></g><path d="M27,46 L35,124 Q36,131 43,131 L57,131 Q64,131 65,124 L73,46 Z" fill="none" stroke="#06251C" stroke-opacity=".8" stroke-width="2.6" stroke-linejoin="round"/><path d="M30.3,73 L69.7,73 L67.6,99 L32.4,99 Z" fill="#C9A227" fill-opacity=".22" stroke="#06251C" stroke-opacity=".55" stroke-width="2"/><path d="M30,46 q6,-16 20,-16 q14,0 20,16 Z" fill="#FCF6EA" stroke="#06251C" stroke-opacity=".8" stroke-width="2.4" stroke-linejoin="round"/><path d="M36,38 q5,-5 9,-1 M52,34 q5,-4 9,1" stroke="#C07A2E" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg>
         <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:10px;">Get Cozy</h3>
         <p class="mood-desc">It's a slow, indulgent kind of day. You want something warm and generous — a drink that feels like a reward, not a tool.</p>
         <div class="drink-rec">
@@ -546,7 +548,7 @@
 
     <div class="mood-panel" id="mood-social">
       <div>
-        <div class="mood-emoji">✨</div>
+        <svg class="mood-art" viewBox="0 0 100 140" role="img" aria-label="Illustration of a pink strawberry refresher with coconut milk"><defs><clipPath id="cs"><path d="M25,40 L33,122 Q34,129 41,129 L59,129 Q66,129 67,122 L75,40 Z"/></clipPath></defs><path d="M60,12 L66,33" stroke="#D8556B" stroke-width="7" stroke-linecap="round"/><g clip-path="url(#cs)"><rect x="0" y="40" width="100" height="100" fill="#F2A3B4"/><rect x="0" y="40" width="100" height="14" fill="#F8C4CF" opacity=".85"/><ellipse cx="40" cy="64" rx="4" ry="2.9" fill="#C8415C" transform="rotate(12 40 64)"/><ellipse cx="58" cy="75" rx="3.4" ry="2.4" fill="#C8415C" transform="rotate(-20 58 75)"/><ellipse cx="45" cy="92" rx="3.8" ry="2.7" fill="#C8415C" transform="rotate(35 45 92)"/><ellipse cx="61" cy="104" rx="3.2" ry="2.3" fill="#C8415C" transform="rotate(8 61 104)"/><ellipse cx="36" cy="108" rx="3" ry="2.2" fill="#C8415C" transform="rotate(-15 36 108)"/><g fill="#FFFFFF" fill-opacity=".34" stroke="#FFFFFF" stroke-opacity=".7" stroke-width="1"><rect x="31" y="52" width="16" height="15" rx="3" transform="rotate(-14 39 59)"/><rect x="52" y="62" width="15" height="14" rx="3" transform="rotate(11 59 69)"/><rect x="36" y="80" width="15" height="14" rx="3" transform="rotate(20 43 87)"/><rect x="54" y="95" width="13" height="12" rx="3" transform="rotate(-9 60 101)"/></g></g><path d="M25,40 L33,122 Q34,129 41,129 L59,129 Q66,129 67,122 L75,40 Z" fill="none" stroke="#06251C" stroke-opacity=".8" stroke-width="2.6" stroke-linejoin="round"/><rect x="21" y="30" width="58" height="11" rx="5" fill="#EFEAE0" stroke="#06251C" stroke-opacity=".8" stroke-width="2.4"/></svg>
         <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:10px;">Be Social</h3>
         <p class="mood-desc">You're meeting someone, or you want a drink that's conversation-worthy. Visually interesting, fun to describe, preferably photogenic.</p>
         <div class="drink-rec">
@@ -568,7 +570,7 @@
 
     <div class="mood-panel" id="mood-refresh">
       <div>
-        <div class="mood-emoji">🌊</div>
+        <svg class="mood-art" viewBox="0 0 100 140" role="img" aria-label="Illustration of a mango dragonfruit refresher"><defs><clipPath id="cr"><path d="M25,40 L33,122 Q34,129 41,129 L59,129 Q66,129 67,122 L75,40 Z"/></clipPath><linearGradient id="gmango" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7C24A"/><stop offset="1" stop-color="#EE7B34"/></linearGradient></defs><path d="M60,12 L66,33" stroke="#E88A2E" stroke-width="7" stroke-linecap="round"/><g clip-path="url(#cr)"><rect x="0" y="40" width="100" height="100" fill="url(#gmango)"/><ellipse cx="42" cy="66" rx="4.2" ry="3.0" fill="#E4576A" transform="rotate(18 42 66)"/><ellipse cx="59" cy="80" rx="3.6" ry="2.6" fill="#E4576A" transform="rotate(-12 59 80)"/><ellipse cx="44" cy="97" rx="3.4" ry="2.4" fill="#E4576A" transform="rotate(30 44 97)"/><ellipse cx="60" cy="110" rx="3" ry="2.2" fill="#E4576A" transform="rotate(-6 60 110)"/><g fill="#FFFFFF" fill-opacity=".34" stroke="#FFFFFF" stroke-opacity=".7" stroke-width="1"><rect x="31" y="52" width="16" height="15" rx="3" transform="rotate(-14 39 59)"/><rect x="52" y="62" width="15" height="14" rx="3" transform="rotate(11 59 69)"/><rect x="36" y="80" width="15" height="14" rx="3" transform="rotate(20 43 87)"/><rect x="54" y="95" width="13" height="12" rx="3" transform="rotate(-9 60 101)"/></g></g><path d="M25,40 L33,122 Q34,129 41,129 L59,129 Q66,129 67,122 L75,40 Z" fill="none" stroke="#06251C" stroke-opacity=".8" stroke-width="2.6" stroke-linejoin="round"/><rect x="21" y="30" width="58" height="11" rx="5" fill="#EFEAE0" stroke="#06251C" stroke-opacity=".8" stroke-width="2.4"/></svg>
         <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:10px;">Refresh</h3>
         <p class="mood-desc">Hot outside, or you just want something clean and bright. Light, cold, and either sparkling or fruit-forward — a drink that resets you.</p>
         <div class="drink-rec">
@@ -745,6 +747,7 @@
   <div>
     <div class="footer-name">Manasa J</div>
     <p style="font-size:.8rem;color:var(--subtle);margin-top:6px;max-width:none;">Sip Your Vibe — Starbucks Mood Drinks Feature &middot; Product Case Study</p>
+    <p style="font-size:.74rem;color:var(--subtle);margin-top:10px;max-width:46ch;line-height:1.5;">An independent product concept created for portfolio purposes. Not affiliated with, authorized by, or endorsed by Starbucks Corporation. All illustrations are original work.</p>
   </div>
   <div class="footer-links">
     <a href="../index.html">Portfolio</a>
