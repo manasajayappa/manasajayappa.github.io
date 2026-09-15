@@ -314,16 +314,3 @@ strong { color:var(--text); font-weight:600; }
   .stat-band { padding:34px 24px; }
   .stat-band-inner { grid-template-columns:1fr; gap:28px; }
 }
-
-/* ---------- About: portrait ---------- */
-.about-side { display:flex; flex-direction:column; gap:22px; }
-.about-photo { margin:0 0 0 auto; max-width:250px; border-radius:14px; overflow:hidden;
-  border:1px solid var(--border); background:var(--panel); box-shadow:0 1px 3px rgba(22,24,28,.04); }
-.about-photo img {
-  display:block; width:100%; height:auto; aspect-ratio:4/5;
-  object-fit:cover; object-position:center 32%;
-}
-@media (max-width:860px) {
-  .about-side { gap:26px; }
-  .about-photo { max-width:230px; margin:0; }
-}
