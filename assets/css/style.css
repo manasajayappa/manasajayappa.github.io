@@ -313,10 +313,3 @@ strong { color:var(--text); font-weight:600; }
   .stat-band-inner { grid-template-columns:1fr; gap:28px; }
 }
 
-
-/* ---------- About: original two-column layout, sentences centred ---------- */
-#about .about-grid > div > p {
-  text-align:justify;
-  /* hyphenation keeps justified text from opening word-gaps in a ~560px column */
-  -webkit-hyphens:auto; hyphens:auto;
-}
