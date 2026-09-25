@@ -314,13 +314,5 @@ strong { color:var(--text); font-weight:600; }
 }
 
 
-/* ---------- About: centred ---------- */
-#about { text-align:center; }
-#about .section-marker { justify-content:center; }
-#about h2 { max-width:26ch; margin-left:auto; margin-right:auto; }
-#about .about-grid {
-  grid-template-columns:1fr; gap:40px;
-  max-width:760px; margin-left:auto; margin-right:auto;
-}
-#about p { margin-left:auto; margin-right:auto; }
-#about .about-facts { text-align:center; }
+/* ---------- About: original two-column layout, sentences centred ---------- */
+#about .about-grid > div > p { text-align:center; }
