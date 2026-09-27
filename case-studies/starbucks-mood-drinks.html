@@ -298,7 +298,29 @@
   @media (prefers-reduced-motion: reduce) {
     .cs-sum-cell, .insight-cell, .persona, .metric-card, .matrix-wrap, .persona::before { transition:none; }
     .cs-sum-cell:hover, .insight-cell:hover, .persona:hover, .metric-card:hover { transform:none; }
-  }</style>
+  }
+  /* ---- Marketing strategy: the four Ps ---- */
+  .fourp-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:40px; }
+  .fourp-card { background:var(--tile); border:1px solid var(--tile-line); border-radius:24px; padding:26px 24px;
+    transition: transform .26s cubic-bezier(.22,.61,.36,1), box-shadow .26s cubic-bezier(.22,.61,.36,1),
+                border-color .26s ease, background-color .26s ease; }
+  .fourp-card:hover { transform:translateY(-6px); background:#FFFFFF; border-color:rgba(0,112,74,.38);
+    box-shadow:0 18px 38px rgba(0,20,14,.32), 0 2px 6px rgba(0,20,14,.18); }
+  .fourp-label { font-size:.7rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--sb); margin-bottom:10px; }
+  .fourp-play { font-family:'Inter',sans-serif; font-size:1.0625rem; font-weight:600; color:var(--ink);
+    line-height:1.4; letter-spacing:-.01em; margin-bottom:14px; }
+  .fourp-card ul { list-style:none; margin:0; padding:0; }
+  .fourp-card li { font-size:.9375rem; line-height:1.65; color:var(--ink-soft);
+    padding:5px 0 5px 17px; position:relative; max-width:none; }
+  .fourp-card li::before { content:'\2013'; position:absolute; left:0; color:var(--sb); }
+  .fourp-card li strong, .fourp-card li em { color:var(--ink); }
+  @media(max-width:760px){ .fourp-grid { grid-template-columns:1fr; } }
+  @media (hover: none) { .fourp-card:hover { transform:none; box-shadow:none;
+    background:var(--tile); border-color:var(--tile-line); } }
+  @media (prefers-reduced-motion: reduce) { .fourp-card { transition:none; }
+    .fourp-card:hover { transform:none; } }
+</style>
 </head>
 <body>
 
@@ -380,6 +402,7 @@
     <a href="#research">Research</a>
     <a href="#feature">Feature</a>
     <a href="#roadmap">Roadmap</a>
+    <a href="#gtm">Marketing</a>
     <a href="#metrics">Metrics</a>
   </div>
 </div>
@@ -720,6 +743,60 @@
           <li>Nationwide rollout to all Starbucks app users</li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="gtm" class="wide">
+  <div class="section-marker">Marketing Strategy</div>
+  <h2>The four Ps, applied to a feature rather than a product</h2>
+  <p>A feature inside an existing app doesn't get a price tag or a shelf, so the classic four Ps have to be
+  re-read. The useful question isn't "what do we charge?" but "where does value get captured, and what does
+  distribution mean when the storefront is a home screen?"</p>
+
+  <div class="fourp-grid">
+    <div class="fourp-card">
+      <div class="fourp-label">Product</div>
+      <div class="fourp-play">The product isn't a drink. It's a decision.</div>
+      <ul>
+        <li>The six mood states are the taxonomy customers already speak in; the drink is the output, not the offer.</li>
+        <li>The "why this drink" line is the real differentiator. An <em>explained</em> recommendation is a different product from a suggested one.</li>
+        <li>v1 is curated by the beverage team, so the brand controls quality of fit before any model does.</li>
+      </ul>
+    </div>
+
+    <div class="fourp-card">
+      <div class="fourp-label">Price</div>
+      <div class="fourp-play">Free to use. The lever is basket size, not price.</div>
+      <ul>
+        <li>No launch discount. A promo would confound the trial-rate lift, and we could not separate the recommendation from the coupon.</li>
+        <li>Value is captured through mix: mood-led orders target <strong>$7.40</strong> against <strong>$6.20</strong> on reorders, driven by customizations and add-ons.</li>
+        <li>A Rewards-star incentive stays in reserve for beta, used only if trial rate lands under target.</li>
+      </ul>
+    </div>
+
+    <div class="fourp-card">
+      <div class="fourp-label">Place</div>
+      <div class="fourp-play">Top of the home screen, before the menu.</div>
+      <ul>
+        <li>Placement <em>is</em> the feature. Surfaced below the menu it becomes one more carousel to scroll past.</li>
+        <li>iOS and Android only at launch. The 18-second decision friction is measured in-app, so that is where the fix belongs.</li>
+        <li>Geography staged with the roadmap: 50-employee alpha, then 25,000 Rewards members across three cities, then nationwide.</li>
+        <li>In-store menu boards and drive-thru stay out of scope until the mood-to-drink mapping is proven on real orders.</li>
+      </ul>
+    </div>
+
+    <div class="fourp-card">
+      <div class="fourp-label">Promotion</div>
+      <div class="fourp-play">Earn the discovery; don't buy it.</div>
+      <ul>
+        <li>An in-app first-run prompt and a Rewards email to the beta cohort. No paid media at launch.</li>
+        <li>Timed to a seasonal menu change, when decision fatigue peaks and trying something new is already the norm.</li>
+        <li>The v2.0 share card makes the customer the channel: a mood card travels further than a drink photo.</li>
+        <li>Guardrail: if engagement needs paid support to clear 35% of DAU, the feature has not earned its place on the home screen.</li>
+      </ul>
     </div>
   </div>
 </section>
