@@ -320,6 +320,28 @@
     background:var(--tile); border-color:var(--tile-line); } }
   @media (prefers-reduced-motion: reduce) { .fourp-card { transition:none; }
     .fourp-card:hover { transform:none; } }
+
+  /* ---- Situation analysis: the five Cs ---- */
+  .fivec-list { display:flex; flex-direction:column; gap:14px; margin-top:40px; }
+  .fivec-row { display:grid; grid-template-columns:210px 1fr; gap:26px;
+    background:var(--tile); border:1px solid var(--tile-line); border-radius:24px; padding:24px 26px;
+    transition: transform .26s cubic-bezier(.22,.61,.36,1), box-shadow .26s cubic-bezier(.22,.61,.36,1),
+                border-color .26s ease, background-color .26s ease; }
+  .fivec-row:hover { transform:translateY(-4px); background:#FFFFFF; border-color:rgba(0,112,74,.38);
+    box-shadow:0 16px 34px rgba(0,20,14,.30), 0 2px 6px rgba(0,20,14,.16); }
+  .fivec-name { font-family:'Inter',sans-serif; font-size:1.125rem; font-weight:600; color:var(--ink);
+    letter-spacing:-.01em; }
+  .fivec-tag { font-size:.8125rem; font-weight:600; color:var(--sb); margin-top:5px; line-height:1.45; }
+  .fivec-row ul { list-style:none; margin:0; padding:0; }
+  .fivec-row li { font-size:.9375rem; line-height:1.65; color:var(--ink-soft);
+    padding:4px 0 4px 17px; position:relative; max-width:none; }
+  .fivec-row li::before { content:'\2013'; position:absolute; left:0; color:var(--sb); }
+  .fivec-row li strong, .fivec-row li em { color:var(--ink); }
+  @media(max-width:760px){ .fivec-row { grid-template-columns:1fr; gap:12px; padding:22px; } }
+  @media (hover: none) { .fivec-row:hover { transform:none; box-shadow:none;
+    background:var(--tile); border-color:var(--tile-line); } }
+  @media (prefers-reduced-motion: reduce) { .fivec-row { transition:none; }
+    .fivec-row:hover { transform:none; } }
 </style>
 </head>
 <body>
@@ -399,6 +421,7 @@
     <span class="cs-jump-label">Jump to</span>
     <a href="#summary">Summary</a>
     <a href="#problem">Problem</a>
+    <a href="#situation">Situation</a>
     <a href="#research">Research</a>
     <a href="#feature">Feature</a>
     <a href="#roadmap">Roadmap</a>
@@ -431,6 +454,79 @@
     <div class="insight-cell">
       <div class="insight-stat">18s</div>
       <p>average time users spend scrolling the menu before making a selection, a clear signal of friction and indecision</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="situation" class="wide">
+  <div class="section-marker">Situation Analysis</div>
+  <h2>The five Cs: the landscape this feature ships into</h2>
+  <p>Before scoping anything, I mapped the situation. The five Cs are what make the case that this is a
+  gap worth closing rather than a feature worth building because it sounds good.</p>
+
+  <div class="fivec-list">
+    <div class="fivec-row">
+      <div>
+        <div class="fivec-name">Company</div>
+        <div class="fivec-tag">Rides existing rails</div>
+      </div>
+      <ul>
+        <li>Starbucks' customization depth is a supply-side strength that became a demand-side problem: the same breadth that enables 170,000+ combinations is what makes choosing hard.</li>
+        <li>The app already has order history, loyalty identity and a home screen with real traffic. This feature needs no new infrastructure, only a new surface on top of it.</li>
+        <li>Constraint worth naming: the beverage team owns drink quality. Any recommendation layer has to defer to their curation, not route around it.</li>
+      </ul>
+    </div>
+
+    <div class="fivec-row">
+      <div>
+        <div class="fivec-name">Customers</div>
+        <div class="fivec-tag">Already think in moods</div>
+      </div>
+      <ul>
+        <li>Three behavioral segments surfaced in discovery: energy seekers, mindful sippers and occasion drinkers.</li>
+        <li>Frequent users (3+ visits a week) feel the problem hardest, because they hit menu repetition most often.</li>
+        <li>Gen Z over-indexes on choosing cafes for atmosphere, so mood is already the language they shop in. The app simply has nowhere to receive it.</li>
+      </ul>
+    </div>
+
+    <div class="fivec-row">
+      <div>
+        <div class="fivec-name">Competitors</div>
+        <div class="fivec-tag">Nobody owns "help me decide"</div>
+      </div>
+      <ul>
+        <li>Direct rivals compete on speed and habit. None of them compete on discovery.</li>
+        <li>Delivery marketplaces run recommendation engines already, but they are behavioral, trained on what you reordered, not on how you feel today.</li>
+        <li>The real competitor is the customer's own default order. The habit loop, not another brand, is what a mood recommendation has to beat.</li>
+      </ul>
+    </div>
+
+    <div class="fivec-row">
+      <div>
+        <div class="fivec-name">Collaborators</div>
+        <div class="fivec-tag">Four teams, one dependency chain</div>
+      </div>
+      <ul>
+        <li>Beverage curates the mood-to-drink mapping and signs off on fit.</li>
+        <li>Data science owns the v2 model, and the mood-labeled dataset it needs does not exist until v1 ships.</li>
+        <li>Store operations is the constraint most easily missed: a recommendation that drives orders baristas cannot make quickly damages the very experience it is trying to improve.</li>
+        <li>CRM and marketing own the Rewards email and the in-app placement that carry launch.</li>
+      </ul>
+    </div>
+
+    <div class="fivec-row">
+      <div>
+        <div class="fivec-name">Context</div>
+        <div class="fivec-tag">Climate is favourable, privacy is the watch item</div>
+      </div>
+      <ul>
+        <li>Streaming services have trained customers to expect an app to know what they want. Retail apps are now judged against that bar.</li>
+        <li>The wellness and functional-beverage trend makes "calm" and "focus" legible as drink attributes rather than marketing language.</li>
+        <li>Scrutiny of emotional data is rising, which is an argument <em>for</em> this design: a self-reported mood tap is far more defensible than inferring feeling from biometrics or behaviour.</li>
+        <li>The seasonal menu cadence creates a natural launch window, when trying something new is already expected.</li>
+      </ul>
     </div>
   </div>
 </section>
